@@ -2,3 +2,7 @@ start.bat
 start.ps1
 start.sh
 virtual
+*.pyc
+.vscode
+.idea
+migrations
