@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Mr+Dafoe&display=swap');
+
+$default-value: 8px;
+
+@function multiply-value($unit) {
+  @return $default-value * $unit;
+}
+
+.cstm-logo {
+  font-family: 'Mr Dafoe', cursive;
+}
+
+.cstm-container {
+  height: 100%;
+}
+
+.lol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+// body, html {
+//   height: 100%;
+// }

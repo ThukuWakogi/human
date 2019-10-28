@@ -1,0 +1,15 @@
+{% extends "material/base.html" %}
+
+{% block styles %}
+  {{ super() }}
+  <link href="{{ url_for('static', filename='css/styles.scss.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block navbar %}
+  {% include 'navbar.html' %}
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+{% endblock %}

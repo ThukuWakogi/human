@@ -6,3 +6,4 @@ virtual
 .vscode
 .idea
 migrations
+app/static/css
