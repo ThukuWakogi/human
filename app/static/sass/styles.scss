@@ -26,6 +26,10 @@ body, html {
   height: 100%;
 }
 
+body {
+  background-color: #fff0f8;
+}
+
 .cstm-landing-page-background {
   background-image: url('../images/girl_blonde_box_wind_hair_nature-685530.jpg');
   object-fit: cover;
@@ -61,4 +65,59 @@ body, html {
 
 .cstm-center-text {
   text-align: center;
+}
+
+.cstm-flex-column-align-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cstm-gutterbottom-3 {
+  margin-bottom: multiply-value(3);
+}
+
+.cstm-gutterbottom-2 {
+  margin-bottom: multiply-value(2);
+}
+
+.cstm-gutterbottom-1 {
+  margin-bottom: multiply-value(1);
+}
+
+.cstm-gutterbottom-0-5 {
+  margin-bottom: multiply-value(0.5);
+}
+
+.cstm-guttertop-3 {
+  margin-top: multiply-value(3);
+}
+
+.cstm-guttertop-2 {
+  margin-top: multiply-value(2);
+}
+
+.cstm-guttertop-1 {
+  margin-top: multiply-value(1);
+}
+
+.cstm-guttertop-0-5 {
+  margin-top: multiply-value(0.5);
+}
+
+.cstm-stories-content {
+  margin-top: multiply-value(4);
+  margin-top: 28%;
+}
+
+.cstm-fab-position {
+  position: fixed;
+  bottom: 45px;
+  right: 24px;
+}
+
+.cstm-auth-content {
+  form {
+    margin-top: multiply-value(4);
+  }
 }

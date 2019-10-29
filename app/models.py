@@ -1,8 +1,11 @@
 from . import db
 from flask_login import UserMixin
 from datetime import datetime
+from . import login_manager
 
-
+@login_manager.user_loader
+def load_user(user_id):
+  return User.query.get(int(user_id))
 class User(UserMixin, db.Model):
   '''
   maps to users table in database
@@ -18,6 +21,7 @@ class User(UserMixin, db.Model):
   email = db.Column(db.String(255), index=True, nullable=False)
   password = db.Column(db.String(255), nullable=False)
   creation_date = db.Column(db.DateTime, nullable=False, default=datetime.now())
+  blogs = db.relationship('Blog', backref='blogs', lazy=True)
 
 class Blog(db.Model):
   '''
@@ -34,6 +38,7 @@ class Blog(db.Model):
   body = db.Column(db.String(), index=True, nullable=False)
   created_by = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
   creation_date = db.Column(db.DateTime, nullable=False, default=datetime.now())
+  user = db.relationship('User', backref='user', lazy=True)
 
 class Comment(db.Model):
   '''

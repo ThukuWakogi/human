@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    {% if number_of_stories == 0 %}
+      <div class="cstm-flex-column-align-center cstm-stories-content cstm-center-text">
+        <h4 class="cstm-gutterbottom-0-5 cstm-guttertop-1">Stories haven't been posted...</h4>
+        <h3 class="cstm-gutterbottom-0-5 cstm-guttertop-1">yet</h3>
+        <p>Be the first to add a story.</p>
+      </div>
+    {% else %}
+      <div>yes, stories</div>
+    {% endif %}
+  </div>
+  <a class="btn-floating btn-large waves-effect waves-light red cstm-fab-position"><i class="material-icons">add</i></a>
+{% endblock %}
+

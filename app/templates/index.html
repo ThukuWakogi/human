@@ -8,9 +8,13 @@
           <h1 class="cstm-logo cstm-logo-banner">human</h1>
           <h6>experience life through others' stories</h6>
           <div class="cstm-banner-actions">
-            <a href="" class="waves-effect waves-light btn-flat cstm-white-text">view stories</a>
-            <a href="" class="waves-effect waves-light btn-flat cstm-white-text">login</a>
-            <a href="" class="waves-effect waves-light btn-flat cstm-white-text">register</a>
+            {% if current_user.is_authenticated %}
+              <a href="/stories" class="waves-effect waves-light btn-flat cstm-white-text">view stories</a>
+            {% else %}
+              <a href="/stories" class="waves-effect waves-light btn-flat cstm-white-text">view stories</a>
+              <a href="/authenticate/login" class="waves-effect waves-light btn-flat cstm-white-text">login</a>
+              <a href="/authenticate/register" class="waves-effect waves-light btn-flat cstm-white-text">register</a>
+            {% endif %}
           </div>
         </div>
       </div>

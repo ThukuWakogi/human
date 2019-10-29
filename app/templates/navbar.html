@@ -1,13 +1,26 @@
 <nav>
   <div class="nav-wrapper">
-    <a href="#!" class="brand-logo center cstm-logo">human</a>
+    <a href="/" class="brand-logo center cstm-logo">human</a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
       <li><a href="">home</a></li>
+      {% if current_user.is_authenticated %}
+        <li><a href="">{{ current_user.name }}</a></li>
+        <li><a href="">logout</a></li>
+      {% else %}
+        <li><a href="/authenticate/login">login</a></li>
+        <li><a href="/authenticate/register">register</a></li>
+      {% endif %}
     </ul>
   </div>
 </nav>
-
 <ul class="sidenav" id="mobile-demo">
   <li><a href="">home</a></li>
+  {% if current_user.is_authenticated %}
+    <li><a href="">{{ current_user.name }}</a></li>
+    <li><a href="">logout</a></li>
+  {% else %}
+    <li><a href="/authenticate/login">login</a></li>
+    <li><a href="/authenticate/register">register</a></li>
+  {% endif %}
 </ul>

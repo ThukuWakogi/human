@@ -1,0 +1,10 @@
+{% macro render_textfield(field) %}
+  <div class="input-field">
+    {{ field(**kwargs)|safe }}
+    <label for="{{ field.name }}" class="active">{{ field.label }}</label>
+  </div>
+{% endmacro %}
+
+{% macro render_submitfield(field) %}
+  {{ field(**kwargs)|safe }}
+{% endmacro %}
