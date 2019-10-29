@@ -9,7 +9,25 @@
         <p>Be the first to <a href='/story/add'>add a story</a>.</p>
       </div>
     {% else %}
-      <div>yes, stories</div>
+      <div class="cstm-story-banner cstm-flex-column-justify-align-center cstm-center-text">
+        <h4>experience the stories presented</h4>
+      </div>
+      <div class="row">
+        {% for story in stories %}
+          <div class="col s12 m4">
+            <div class="card darken-1">
+              <div class="card-content">
+                <span class="card-title">{{ story.title }}</span>
+                <p>{{ story.body[:150] + '...' }}</p>
+                <p class="cstm-caption"> written by {{ story.user.name }} on {{ story.creation_date.strftime("%b %d %Y %H:%M:%S") }}</p>
+              </div>
+              <div class="card-action">
+                <a href="">View full story</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
     {% endif %}
   </div>
   <a href='/story/add' class="btn-floating btn-large waves-effect waves-light red cstm-fab-position"><i class="material-icons">add</i></a>
