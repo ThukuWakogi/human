@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{#% import "material/wtf.html" as wtf %#}
 {% from 'render_fields.html' import render_textfield, render_submitfield %}
 
 {% block content %}
@@ -7,12 +6,16 @@
     <div class="cstm-auth-content">
       <h3 class="cstm-center-text">Login</h3>
       <p class="cstm-center-text">Welcome back to <span class="cstm-logo">human</span></p>
-      <form action="" method="post">
+      <form action="/authenticate/login" method="post">
         {{ form.csrf_token }}
         {{ render_textfield(form.email, class='validate') }}
         {{ render_textfield(form.password, class='validate') }}
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          <p style="color: red;">{{ messages[0] }}</p>
+          {% endif %}
+        {% endwith %}
         {{ render_submitfield(form.submit, class='waves-effect waves-light btn cstm-white-text') }}
-        
       </form>
     </div>
   </div>

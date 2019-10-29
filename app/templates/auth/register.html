@@ -6,7 +6,7 @@
     <div class="cstm-auth-content">
       <h3 class="cstm-center-text">Register</h3>
       <p class="cstm-center-text">Get your account to enjoy <span class="cstm-logo">human</span> in full</p>
-      <form action="" method="post">
+      <form action="/authenticate/register" method="post">
         {{ form.csrf_token }}
         {{ render_textfield(form.name, class='validate') }}
         {{ render_textfield(form.email, class='validate') }}

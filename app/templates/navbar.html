@@ -6,7 +6,7 @@
       <li><a href="">home</a></li>
       {% if current_user.is_authenticated %}
         <li><a href="">{{ current_user.name }}</a></li>
-        <li><a href="">logout</a></li>
+        <li><a href="/authenticate/logout">logout</a></li>
       {% else %}
         <li><a href="/authenticate/login">login</a></li>
         <li><a href="/authenticate/register">register</a></li>
@@ -18,7 +18,7 @@
   <li><a href="">home</a></li>
   {% if current_user.is_authenticated %}
     <li><a href="">{{ current_user.name }}</a></li>
-    <li><a href="">logout</a></li>
+    <li><a href="authenticate/logout">logout</a></li>
   {% else %}
     <li><a href="/authenticate/login">login</a></li>
     <li><a href="/authenticate/register">register</a></li>
