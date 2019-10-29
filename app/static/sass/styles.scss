@@ -116,8 +116,9 @@ body {
   right: 24px;
 }
 
-.cstm-auth-content {
+.cstm-auth-content, .cstm-main-content {
   form {
     margin-top: multiply-value(4);
+    margin-bottom: multiply-value(2);
   }
 }

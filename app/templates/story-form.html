@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% from 'render_fields.html' import render_textfield, render_submitfield, render_textareafield %}
+
+{% block content %}
+<div class="container" style="margin-top: 81px">
+    <div class="cstm-main-content">
+      <h3 class="cstm-center-text">Craft your story</h3>
+      <p class="cstm-center-text">your experience is a great benefit to us all<span class="cstm-logo">human</span></p>
+      <form action="/story/add" method="post">
+        {{ form.csrf_token }}
+        {{ render_textfield(form.title, class='validate') }}
+        {{ render_textareafield(form.body, class='materialize-textarea') }}
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          <p style="color: red;">{{ messages[0] }}</p>
+          {% endif %}
+        {% endwith %}
+        {{ render_submitfield(form.submit, class='waves-effect waves-light btn cstm-white-text') }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
